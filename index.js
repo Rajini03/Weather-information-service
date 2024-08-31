@@ -3,13 +3,17 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
+const path = require('path');  // Add this line
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const WEATHERSTACK_API_KEY = process.env.WEATHERSTACK_API_KEY;
 
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
-    res.send('Welcome to the Weather Information Service! Use /weather?city={city_name} to get weather information.');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/weather', async (req, res) => {
