@@ -18,7 +18,7 @@ Technologies Used
 
 Now, let us know briefly about this project.
 
-* Node.js installed on your machine.   
+* Node.js installed on my machine.   
 * A Weatherstack API key. Sign up for free.
 * Installation ->
         1. Clone the repository
